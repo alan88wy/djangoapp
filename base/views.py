@@ -68,7 +68,7 @@ def updateRoom(request, pk):
 
     # Take care of the input from user
     if request.method == 'POST':
-        room = RoomForm(request.POST, instance=room)
+        form = RoomForm(request.POST, instance=room)
         
         # print(request.POST)
 
