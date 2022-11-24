@@ -4,6 +4,9 @@ from django.http import HttpResponse
 from .models import Room, Topic
 from .forms import RoomForm
 from django.http import Http404
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 
 # Create your views here.
 # Queries to DB, template to render etc
@@ -13,6 +16,35 @@ from django.http import Http404
 #     {"id": 2, "name": "Let's learn C++ !"},
 #     {"id": 3, "name": "Let's learn Java !"},
 # ]
+
+def loginPage(request):
+    
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        try:
+            user = User.objects.get(username=username)
+        except:
+            messages.error(request, 'User Does not exist!')
+            
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+        else:
+            messages.error(request, 'Login Failed. Username or Password is incorrect !')
+            
+    context = {}
+    
+    return render(request, 'base/login_register.html', context)
+
+def logoutUser(request):
+    
+    logout(request)
+    
+    return redirect('home')
 
 def home(request):
     

@@ -15,7 +15,9 @@ from . import views
 #        of a URL path as with str.
 
 urlpatterns = [
-    path("", views.home, name="home"),
+    path('login/', views.loginPage, name="login"),
+    path('logout/', views.logoutUser, name="logout"),
+    path('', views.home, name="home"),
     path('room/<str:pk>/', views.room, name="room"),
     path('create-room/', views.createRoom, name="create-room"),
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),
