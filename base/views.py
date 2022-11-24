@@ -75,9 +75,6 @@ def updateRoom(request, pk):
         if form.is_valid():
             form.save()
             return redirect('home')  # Redirect to home page
-        else:
-            print("error : ", form.errors)
-            # raise Http404
     
     context = {'form': form}
     return render(request, 'base/room_form.html', context)
