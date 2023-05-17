@@ -59,6 +59,7 @@ TEMPLATES = [
         "DIRS": [
                 BASE_DIR / 'templates'
                 # Can also be BASE_DIR, 'templates'
+                # Can also do os.path.join(BASE_DIR, 'templates/')
         ],
         "APP_DIRS": True,
         "OPTIONS": {
