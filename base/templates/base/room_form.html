@@ -18,7 +18,8 @@
 
             For example, if we define this in the forms.py:
                 name = forms.CharField(label='Name', max_length=200)
-
+            Can also include widget in the efinition. For example:
+                message = forms.CharField(label='Message', widget=forms.TextArea())
             We can refer to the field like the following here:
                 {{Form.name.label_tag}} {{ form.name }}
 
