@@ -6,6 +6,17 @@
         {% csrf_token %}
 
         {{ form.as_p }}
+        
+        {% comment %} 
+            Can also manually refer to individual field.
+
+            For example, if we define this in the forms.py:
+                name = forms.CharField(label='Name', max_length=200)
+
+            We can refer to the field like the following here:
+                {{Form.name.label_tag}} {{ form.name }}
+
+        {% endcomment %}
 
         <input type="Submit" value="Submit" />
 
