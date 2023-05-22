@@ -10,7 +10,7 @@
         {% comment %} 
 
             Can also do:
-            
+
             {{ form.as_ul }}  - unordered list 
             {{ form.as_table }} - table 
 
@@ -21,6 +21,15 @@
 
             We can refer to the field like the following here:
                 {{Form.name.label_tag}} {{ form.name }}
+
+            Can also use for loop to loop through forms so that 
+            we can reder differently.
+
+            {% for field in form  %}
+                <div>
+                    {{ field.label_tag}} {{ field }}
+                </div>
+            {% endfor %}
 
         {% endcomment %}
 
