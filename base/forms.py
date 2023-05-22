@@ -4,7 +4,8 @@ from .models import Room
 class RoomForm(ModelForm):
     
     '''
-    Can also define each form's field separately instead of using Meta class :
+    Can also define each form's field separately instead of using Meta class.
+    Can also add label tag to each field :
     
     name = forms.CharField(label='Name', max_length=200)
     ....
