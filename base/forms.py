@@ -25,5 +25,16 @@ class RoomForm(ModelForm):
         "name" : "Your Name",
     }
     
-    You can then use the label in your html
+    You can then use the label in your html.
+    
+    Can also add custom error message for the field:
+    
+    error_messages = {
+        'star': {
+            'min_value': "Yo, Min value is 1",
+            'max_value': "Max value is 5"
+        }
+    }
+    
+    min_value & max_value is defined in the validators definition in Django.
 '''
