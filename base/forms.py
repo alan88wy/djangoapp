@@ -1,6 +1,7 @@
 from django.forms import ModelForm
 from .models import Room
 
+
 class RoomForm(ModelForm):
     
     '''
@@ -15,3 +16,14 @@ class RoomForm(ModelForm):
         model = Room
         fields = '__all__'  # includes all fields from Room
         
+'''
+    Can also create label with a dictionary for the fields when using __all__
+    
+    For example:
+    
+    labels = {
+        "name" : "Your Name",
+    }
+    
+    You can then use the label in your html
+'''
