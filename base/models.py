@@ -5,8 +5,12 @@ from django.contrib.auth.models import User
 # from django.core.validators import MinValueValidator, MaxValueValidator
 #
 # Then add this when define model. For example:
+#
 # stars = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 #
+# Then add {{ field.errors }} after displaying the field {{ field }} to the html file which 
+# will display error when it is not valid.
+##
 # Create your models here.
 # Define database
 # run python manage.py makemigrations to create this model
